@@ -16,7 +16,7 @@ pipeline {
         
         stage ('SCM_Checkout'){
 		steps {
-		   git branch: 'main', url: 'https://github.com/Princepal1999/angular-v18-app.git'
+		   git branch: 'main', credentialsId: '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', url: 'https://github.com/Princepal1999/angular-v18-app.git'
 		  script {
 						tag = sh (script: "git log -n 1 --pretty=format:'%H'", returnStdout: true)
 					}
